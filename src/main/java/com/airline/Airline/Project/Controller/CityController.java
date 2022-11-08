@@ -18,4 +18,10 @@ public class CityController {
     public CityController(CityService cs) {
         this.cs = cs;
     }
+
+    @GetMapping("/cities")
+    public List<City> getAllCities() {
+        List<City> cities = cs.getAllCities();
+        return cities;
+    }
 }

@@ -13,7 +13,7 @@ import javax.persistence.*;
 @ToString
 public class Flight {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int flight_id;
     @Column
     private int departing_city_id;
