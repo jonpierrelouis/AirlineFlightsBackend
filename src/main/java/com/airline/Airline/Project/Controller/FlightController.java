@@ -3,10 +3,7 @@ package com.airline.Airline.Project.Controller;
 import com.airline.Airline.Project.Models.City;
 import com.airline.Airline.Project.Models.Flight;
 import com.airline.Airline.Project.Service.FlightService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,12 +16,12 @@ public class FlightController {
         this.fs = fs;
     }
 
-    @GetMapping("/flights")
+    @PostMapping("/flights")
     public List<Flight> findAllFlightsByCities(@RequestBody List<City> cities) {
         return fs.findAllFlightsByCities(cities);
     }
 
-    @GetMapping("flights/departing")
+    @PostMapping("flights/departing")
     public List<Flight> findFlightsByDepartingCity(@RequestBody City city) {
         return fs.findFlightsByDepartingCity(city);
     }
