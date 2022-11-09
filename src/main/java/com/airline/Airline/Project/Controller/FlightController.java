@@ -1,5 +1,6 @@
 package com.airline.Airline.Project.Controller;
 
+import com.airline.Airline.Project.DTOs.FlightForList;
 import com.airline.Airline.Project.Models.City;
 import com.airline.Airline.Project.Models.Flight;
 import com.airline.Airline.Project.Service.FlightService;
@@ -17,12 +18,12 @@ public class FlightController {
     }
 
     @GetMapping("/flights/{id1}/{id2}")
-    public List<Flight> findAllFlightsByCities(@PathVariable("id1") int id1, @PathVariable("id2") int id2) {
+    public List<FlightForList> findAllFlightsByCities(@PathVariable("id1") int id1, @PathVariable("id2") int id2) {
         return fs.findAllFlightsByCities(id1, id2);
     }
 
     @GetMapping("flights/departing/{id}")
-    public List<Flight> findFlightsByDepartingCity(@PathVariable("id") int id) {
+    public List<FlightForList> findFlightsByDepartingCity(@PathVariable("id") int id) {
         return fs.findFlightsByDepartingCity(id);
     }
 }
