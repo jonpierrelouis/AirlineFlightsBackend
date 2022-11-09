@@ -46,6 +46,9 @@ jobs:
           distribution: ${{ env.DISTRIBUTION }}
           cache: 'gradle'
           
+      - name: Verify Gradle Version
+        run: gradle --version
+          
       - name: Update gradlew permissions
         run: chmod +x gradlew
 
