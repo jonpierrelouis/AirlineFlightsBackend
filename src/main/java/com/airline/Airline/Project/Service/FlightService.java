@@ -20,4 +20,8 @@ public class FlightService {
         City arrival_city = cities.remove(0);
         return fr.findAllFlightsByCities(departing_city.getCity_id(),arrival_city.getCity_id());
     }
+
+    public List<Flight> findFlightsByDepartingCity(City city) {
+        return fr.findFlightsByDepartingCity(city.getCity_id());
+    }
 }

@@ -23,4 +23,9 @@ public class FlightController {
     public List<Flight> findAllFlightsByCities(@RequestBody List<City> cities) {
         return fs.findAllFlightsByCities(cities);
     }
+
+    @GetMapping("flights/departing")
+    public List<Flight> findFlightsByDepartingCity(@RequestBody City city) {
+        return fs.findFlightsByDepartingCity(city);
+    }
 }
