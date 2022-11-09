@@ -16,13 +16,13 @@ public class FlightController {
         this.fs = fs;
     }
 
-    @PostMapping("/flights")
-    public List<Flight> findAllFlightsByCities(@RequestBody List<City> cities) {
-        return fs.findAllFlightsByCities(cities);
+    @GetMapping("/flights/{id1}/{id2}")
+    public List<Flight> findAllFlightsByCities(@PathVariable("id1") int id1, @PathVariable("id2") int id2) {
+        return fs.findAllFlightsByCities(id1, id2);
     }
 
-    @PostMapping("flights/departing")
-    public List<Flight> findFlightsByDepartingCity(@RequestBody City city) {
-        return fs.findFlightsByDepartingCity(city);
+    @GetMapping("flights/departing/{id}")
+    public List<Flight> findFlightsByDepartingCity(@PathVariable("id") int id) {
+        return fs.findFlightsByDepartingCity(id);
     }
 }

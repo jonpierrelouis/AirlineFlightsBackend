@@ -15,13 +15,11 @@ public class FlightService {
         this.fr = fr;
     }
 
-    public List<Flight> findAllFlightsByCities(List<City> cities) {
-        City departing_city = cities.remove(0);
-        City arrival_city = cities.remove(0);
-        return fr.findAllFlightsByCities(departing_city.getCity_id(),arrival_city.getCity_id());
+    public List<Flight> findAllFlightsByCities(int id1, int id2) {
+        return fr.findAllFlightsByCities(id1, id2);
     }
 
-    public List<Flight> findFlightsByDepartingCity(City city) {
-        return fr.findFlightsByDepartingCity(city.getCity_id());
+    public List<Flight> findFlightsByDepartingCity(int id) {
+        return fr.findFlightsByDepartingCity(id);
     }
 }
